@@ -31,16 +31,17 @@
                     <h1>NuCamp</h1>
                     <h2>a better way to camp</h2>
                 </div>
-                <div class="col align-self-right">
-                    <a data-toggle="modal" data-target="#reserveModal" role="button" class="btn bg-info text-light" >Reserve Campsite</a>
+                <div class="col-md-4 col-xl-2 col mt-4">
+                    <a id="reserveButton" class="btn btn-info btn-lg" >Reserve Campsite</a>
                 </div>
             </div>
         </div>
     </header>
-    <div id="reserveModal" class="modal fade" role="dialog" >
+    <!--Modal after nav-->
+    <div class="modal fade" id="reserveModal" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header bg-info text-white">
+                <div class="modal-header">    
                     <h3 class="modal-title">Reserve a Campsite</h3>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
@@ -67,11 +68,19 @@
                                         <input class="form-control" type="date" id="date" name="date" placeholder="Date">
                                     </div>
                                 </div>
-                                <div class="row form-group col-form-label">
+                                <div class="row form-group">
                                     <label class="col-form-label col-sm-6" for="date">Campsite Type:</label>
-                                    <div class="col">
-                                        <button type="radio" class="btn btn-success text-light" value="tent">Tent</button>
-                                        <button type="radio" class="btn btn-primary text-light" value="RV">RV</button>
+                                    <div class="col-2 btn-group btn-group-toggle" data-toggle="buttons"> 
+                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-success active">
+                                                <input type="radio" name="siteType" id="siteTent" value="tent"
+                                                    autocomplete="off" checked> Tent
+                                            </label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" name="siteType" id="siteRV" value="RV"
+                                                    autocomplete="off"> RV
+                                            </label>
+                                        </div>    
                                     </div>
                                 </div>
                                 <div class="row form-group col-form-label">
@@ -109,6 +118,7 @@
             </div>
         </div>
     </nav>
+    <!--Login Modal-->
     <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
